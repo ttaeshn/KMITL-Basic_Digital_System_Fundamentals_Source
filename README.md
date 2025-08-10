@@ -1,11 +1,11 @@
-KMITL Digital System Fundamentals - Basic Schematic and VHDL for Implementing and Studying More
+# KMITL Digital System Fundamentals - Basic Schematic and VHDL for Implementing and Studying More
 
-ถึงใครก็ตามที่ได้อ่านโน้ตนี้ จะมี Schematic และตัวอย่างการเขียน  VHDL เบื้องต้นสำหรับการเรียนวิชาดิจิตอลตอนเทอม 2 (หลักสูตร 64 และภายภาคหน้ามั้ง) ไว้ 
+### ถึงใครก็ตามที่ได้อ่านโน้ตนี้ จะมี Schematic และตัวอย่างการเขียน  VHDL เบื้องต้นสำหรับการเรียนวิชาดิจิตอลตอนเทอม 2 (หลักสูตร 64 และภายภาคหน้ามั้ง) ไว้ 
 1.แนะนำให้ไปขวนขวาย / ลองใช้และประยุกต์ Symbol ที่เขาให้มาในโปรแกรมให้มากกกกกกกกกกกกกกกกก !!!! รวมไปถึงอ่าน Schematic ให้เข้าใจในหลักการทำงานของมัน พี่จะพยายามทำ Readme ไว้สำหรับบางตัวที่ค่อนข้างยุ่งยาก / ซับซ้อน  โดยจะบอกหลักการทำงานของ Schematic นั้นไว้คร่าว ๆ (แนะนำให้ลองไปถึง  Top down น่าจะเข้าใจการแตกโมดูลต่าง ๆ มากขึ้น) หากมีข้อสงสัยสามารถติดต่อ IG tae_tsp ได้
 2. สำหรับ VHDL โมดูลที่เขียนไว้จะเขียนไว้ให้เช่นกัน แนะนำให้ไปอ่านแล้วฝึกเขียนเพิ่มเติม ถ้านึกไม่ออกลองเอาแลปที่ใช้ Schematic ไปเขียนเป็นฉบับ VHDL ก็ดี เน้นเรื่อง  Clock, LED, 7Segment และ Push Button ทั้งหลาย (ไปหาวิธีทำ Debounce ด้วย Logic ก็ดี หลักการเหมือนในวิชา Intro To Com En / ITC / ICE) หากนึกไม่ออกลอง generate .bit (bitsteam) มาเล่นก่อนได้ เซ็ต UCF (User Constraint File) ด้วยยยยยยยยยยยยยยยยยยยย !!!!!!!!!!!!!
 3. โมดูลหลัง ๆ จะมีการต่อประหลาด ๆ สายไฟไม่เชื่อม เรียกว่า "บัสลอย" ป้องกันการงงในการอ่านสาย (โปรแกรมนี้ถ้า NET สายด้วยชื่อเดียวกัน = สายเดียวกัน)
 
-Schematic
+## Schematic
 1.BCDtosevensegment -> สำหรับแปลงเลขฐานสอง (0-15) ให้ออกมาใช้งานใน 7Segment ได้ (เป็น Symbol สำเร็จรูปแล้ว) 
 2. Counter0-9C -> Counter 0-9 + Input 1 เพื่อ Clear ค่า
 3. Decoder1_4 -> แปลง binary (1 ขา 2 บิต) ให้ออกเป็น 4 บิต ex. 00 -> 1000, 01 -> 0100, 10 -> 0010, 11 -> 0001 (เหมาะสำหรับ Scanning Segment)
@@ -19,7 +19,7 @@ Schematic
 11. Scandigit -> โมดูลสำหรับเลือกว่าจะให้ออกขา Common 0-3 ของ 7Segment
 12. sevensegment -> BCDtosevensegment ที่แตกรายละเอียดลงไป
 
-VHDL
+## VHDL
 1. eightbitadder -> บวกลบเลขฐานสอง 8 บิต และแสดงค่าเข้า 7 Segment
 2. rt01 -> คล้าย ๆ แลป 2 (แลป Logic Trainer ไฟจราจร)
 3. rt02 -> สร้าง Stage ให้หลอด LED และจุดตรง 7Segment วนลูปแบบไปกลับ
