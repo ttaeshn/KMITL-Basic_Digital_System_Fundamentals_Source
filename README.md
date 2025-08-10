@@ -9,8 +9,9 @@
 3. สำหรับ VHDL โมดูลที่เขียนไว้จะเขียนไว้ให้เช่นกัน แนะนำให้ไปอ่านแล้วฝึกเขียนเพิ่มเติม ถ้านึกไม่ออกลองเอาแลปที่ใช้ Schematic ไปเขียนเป็นฉบับ VHDL ก็ดี เน้นเรื่อง  Clock, LED, 7Segment และ Push Button ทั้งหลาย (ไปหาวิธีทำ Debounce ด้วย Logic ก็ดี หลักการเหมือนในวิชา Intro To Com En / ITC / ICE) หากนึกไม่ออกลอง generate .bit (bitsteam) มาเล่นก่อนได้ เซ็ต UCF (User Constraint File) ด้วยยยยยยยยยยยยยยยยยยยย !!!!!!!!!!!!!
 
 ## Schematic
-1.BCDtosevensegment -> สำหรับแปลงเลขฐานสอง (0-15) ให้ออกมาใช้งานใน 7Segment ได้ (เป็น Symbol สำเร็จรูปแล้ว)
 
+1. BCDtosevensegment -> สำหรับแปลงเลขฐานสอง (0-15) ให้ออกมาใช้งานใน 7Segment ได้ (เป็น Symbol สำเร็จรูปแล้ว)
+   
 2. Counter0-9C -> Counter 0-9 + Input 1 เพื่อ Clear ค่า
    
 3. Decoder1_4 -> แปลง binary (1 ขา 2 บิต) ให้ออกเป็น 4 บิต ex. 00 -> 1000, 01 -> 0100, 10 -> 0010, 11 -> 0001 (เหมาะสำหรับ Scanning Segment)
@@ -34,6 +35,7 @@
 12. sevensegment -> BCDtosevensegment ที่แตกรายละเอียดลงไป
 
 ## VHDL
+
 1. eightbitadder -> บวกลบเลขฐานสอง 8 บิต และแสดงค่าเข้า 7 Segment
    
 2. rt01 -> คล้าย ๆ แลป 2 (แลป Logic Trainer ไฟจราจร)
